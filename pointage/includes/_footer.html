@@ -1,0 +1,83 @@
+<footer>
+	<script src="assets/lib/js/jquery-2.1.3.min.js"></script>
+	<script src="assets/lib/js/bootstrap.min.js"></script>
+	<script src="assets/lib/js/bootstrap-datepicker.js"></script>
+	<script src="assets/lib/js/validator.js"></script>
+	<script src="assets/lib/js/application.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+</footer>
+
+<script>
+
+
+$('.btn-log').confirm({
+	theme: 'dark',
+    content: 'Cette boîte de dialogue va \'annuler\' dans 6 secondes si vous ne répondez pas.',
+    autoClose: 'annuler|8000',
+    buttons: {
+        effacer: {
+            text: 'Aller',
+            action: function () {
+				location.href = this.$target.attr('href');
+            }
+        },
+        annuler: function () {
+        }
+    }
+});
+
+$('.btn-d-img').confirm({
+	theme: 'modern',
+    content: 'Cette boîte de dialogue va \'annuler\' dans 6 secondes si vous ne répondez pas.',
+    autoClose: 'annuler|8000',
+    buttons: {
+        effacer: {
+            text: 'Aller',
+            action: function () {
+				location.href = this.$target.attr('href');
+            }
+        },
+        annuler: function () {
+        }
+    }
+});
+
+$('.delete-btn').confirm({
+	theme: 'dark',
+    content: 'Cette boîte de dialogue va \'annuler\' dans 6 secondes si vous ne répondez pas.',
+    autoClose: 'annuler|8000',
+    buttons: {
+        effacer: {
+            text: 'effacer',
+            action: function () {
+				location.href = this.$target.attr('href');
+            }
+        },
+        annuler: function () {
+        }
+    }
+});
+
+
+(function(){
+    $.getJSON("http://localhost/pointage/api/public/api/working", function(result){
+
+        var msgs = "";
+        if(result.length<1){
+            msgs = "0" ;
+        }else{
+            msgs = result.length;
+        }
+        document.title = msgs+" au travail";
+
+
+    });
+    setTimeout(arguments.callee, 1000);
+})();
+
+</script>
+
+</body>
+
+</html>

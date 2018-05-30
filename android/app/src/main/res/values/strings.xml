@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QR Logger</string>
+    <string name="confirm_pin">Confirmer le code pin</string>
+    <string name="hint_pin">Entrer votre code pin</string>
+    <string name="wifi_msg">Assurez-vous que le wifi est activé et vous êtes connecté au wifi local</string>
+
+
+</resources>
